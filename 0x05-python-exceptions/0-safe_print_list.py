@@ -10,5 +10,5 @@ def safe_print_list(my_list=[], x=0):
                 elements += 1
         print()
     except Exception as error:
-        print(error);
+        print(error)
     return elements
