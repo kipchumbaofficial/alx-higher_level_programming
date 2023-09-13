@@ -2,6 +2,8 @@
 """
 Reads and print a file
 """
+
+
 def read_file(filename=""):
     """Reads and prints a
     file
