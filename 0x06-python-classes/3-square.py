@@ -9,7 +9,7 @@ class Square:
     square withn get area method
     '''
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         if type(size) != int:
             raise TypeError("size must be an integerr")
         elif size < 0:
