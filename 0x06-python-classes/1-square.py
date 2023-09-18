@@ -1,4 +1,4 @@
-#!/usr/in/python3
+#!/usr/bin/python3
 '''
 A class definition
 '''
