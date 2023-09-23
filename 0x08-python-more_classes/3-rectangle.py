@@ -55,5 +55,5 @@ class Rectangle:
         retval = ""
         if self.__width != 0 and self.__height != 0:
             retval += "\n".join("#" * self.__width
-                for i in range(self.__height))
+                                for i in range(self.__height))
         return retval
