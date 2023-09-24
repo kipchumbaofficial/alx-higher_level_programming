@@ -53,13 +53,13 @@ class Rectangle:
         return (self.__height * 2) + (self.__width * 2)
 
     def __str__(self):
-        retval = "i"
+        retval = ""
         if self.__height != 0 and self.__width != 0:
             retval += "\n".join("#" * self.__width
                                 for i in range(self.__height))
             return retval
 
     def __repr__(self):
-        retrep = "Rectangle(" + str(self.__width) + ","
+        retrep = "Rectangle(" + str(self.__width) + ", "
         retrep += str(self.__height) + ")"
         return retrep
