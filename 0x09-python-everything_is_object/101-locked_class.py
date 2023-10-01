@@ -6,6 +6,7 @@ locked class
 
 class LockedClass:
     """
-	Locked class
+    Locked class
     """
+
     __slots__ = ['first_name']
