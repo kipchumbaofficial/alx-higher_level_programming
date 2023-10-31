@@ -58,6 +58,6 @@ class Rectangle:
     def __str__(self):
         retval = ""
         if self.__width != 0 and self.__height != 0:
-            for i in range(self.__height):
-                retval += "#" * self.__width + "\n"
+            retval += "\n".join("#" * self.__width
+                                for i in range(self.__height))
             return retval
