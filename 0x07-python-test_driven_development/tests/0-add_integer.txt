@@ -1,0 +1,28 @@
+The ``0-add_integer`` module
+=============================
+
+Using ``add_integer``
+---------------------
+
+This is a test file in reStructuredText format. first import
+``add_integer`` from ``0-add_integer`` module:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+>>> add_integer('a', 1)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(5, 1)
+6
+
+>>> add_integer(5, 'b')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+>>> print(type(add_integer(1, 2)))
+<class 'int'>
+
