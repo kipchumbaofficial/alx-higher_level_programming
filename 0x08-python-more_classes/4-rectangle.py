@@ -68,6 +68,5 @@ class Rectangle:
         return retval
 
     def __repr__(self):
-        str_rep = "Rectangle(" + str(self.__width)
-        str_rep += "," + str(self.__height) + ")"
+        str_rep = "Rectangle({},{})".format(self.__width, self.__height)
         return str_rep
