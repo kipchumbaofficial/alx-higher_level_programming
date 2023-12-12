@@ -92,3 +92,9 @@ class Rectangle(Base):
             for num in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """Str customizTION"""
+        retval = "[Rectangle] ({}) {} / {}".format(self.id, self.__x, self.__y)
+        retval += "- {} / {}".format(self.__width, self.__height)
+        return retval
