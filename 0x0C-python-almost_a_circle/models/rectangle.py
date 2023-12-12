@@ -88,7 +88,13 @@ class Rectangle(Base):
 
     def display(self):
         """Prints rect with # character"""
+        if self.__x != 0:
+            for times in range(self.__y):
+                print()
         for val in range(self.__height):
+            if self.__x != 0:
+                for numbers in range(self.__x):
+                    print(" ", end="")
             for num in range(self.__width):
                 print("#", end="")
             print()
