@@ -104,3 +104,38 @@ class Rectangle(Base):
         retval = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
         retval += "- {}/{}".format(self.__width, self.__height)
         return retval
+
+    def update(self, *args):
+        """Assigns an argument to each attribute"""
+
+        argv = []
+
+        for arg in args:
+            argv.append(arg)
+
+        if len(argv) > 0:
+            self.id = argv[0]
+        if len(argv) > 1:
+            if not isinstance(argv[1], int):
+                raise TypeError("width must be an integers")
+            if argv[1] <= 0:
+                raise ValueError("width must be > 0")
+            self.__width = argv[1]
+        if len(argv) > 2:
+            if not isinstance(argv[2], int):
+                raise TypeError("height must be an integer")
+            if argv[2] <= 0:
+                raise ValueError("height must be > 0")
+            self.__height = argv[2]
+        if len(argv) > 3:
+            if not isinstance(argv[3], int):
+                raise TypeError("x must be an integer")
+            if argv[3] < 0:
+                raise ValueError("x must be >= 0")
+            self.__x = argv[3]
+        if len(argv) > 4:
+            if not isinstance(argv[4], int):
+                raise TypeError("y must be an integer")
+            if argv[4] < 0:
+                raise ValueError("y must be >= 0")
+            self.__y = argv[4]
