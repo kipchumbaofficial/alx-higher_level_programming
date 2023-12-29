@@ -23,4 +23,7 @@ def text_indentation(text):
             print()
             counter = i
             print()
-    print(text[counter - 1:])
+    if counter == 0:
+        print(text[counter:])
+    else
+        print(text[counter - 1:])
