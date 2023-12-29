@@ -17,8 +17,10 @@ def text_indentation(text):
         i += 1
         txt = text[counter:i - 1]
         if char in ['.', ':', '?']:
+            while i < len(text) and text[i].isspace():
+                i += 1
             print(txt, end="")
             print()
             counter = i
             print()
-    print(txt)
+    print(text[counter - 1:])
