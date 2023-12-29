@@ -26,7 +26,8 @@ Now use it:
 ###
 ###
 
->>> print_square(-1)
+>>> try:
+... print_square(-1)
 Traceback(most recent call last):
     ...
 ValueError: size must be >= 0
