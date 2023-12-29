@@ -25,5 +25,5 @@ def text_indentation(text):
             print()
     if counter == 0:
         print(text[counter:])
-    else
+    else:
         print(text[counter - 1:])
