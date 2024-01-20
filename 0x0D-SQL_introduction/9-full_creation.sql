@@ -1,6 +1,6 @@
 -- Creates a second table
 -- INsert into the new table too
-CREATE TABLE second_table (
+CREATE TABLE IF NOT EXISTSsecond_table (
     id INT,
     name VARCHAR(256),
     score INT
