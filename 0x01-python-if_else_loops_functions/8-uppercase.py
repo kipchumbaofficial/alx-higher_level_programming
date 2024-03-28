@@ -6,5 +6,5 @@ def uppercase(str):
             new_asci = ord(char) - 32
         else:
             new_asci = ord(char)
-        print(chr(new_asci), end="")
+        print("{}".format(chr(new_asci)), end="")
     print()
