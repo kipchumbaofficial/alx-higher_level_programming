@@ -2,6 +2,7 @@
 
 from sys import argv
 
+
 def main():
     length = len(argv) - 1
 
@@ -14,6 +15,7 @@ def main():
 
     for index in range(length):
         print("{}: {}".format(index + 1, argv[index + 1]))
+
 
 if __name__ == "__main__":
     main()
