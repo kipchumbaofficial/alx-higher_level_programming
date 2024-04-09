@@ -13,7 +13,7 @@ if (!argv[2] || isNaN(argv[2])) {
     let j = 0;
     let row = '';
     while (j < size) {
-      row += 'x';
+      row += 'X';
       j++;
     }
     console.log(row);
