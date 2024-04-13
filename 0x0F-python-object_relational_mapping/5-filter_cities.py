@@ -19,7 +19,7 @@ def main():
     state = state.replace("'", "''")
     query = "SELECT cities.* FROM cities "
     query += "JOIN states ON cities.state_id=states.id "
-    query += "WHERE states.name LIKE '%{}%'".format(state)
+    query += "WHERE states.name LIKE BINARY '%{}%'".format(state)
 
     cur.execute(query)
     rows = cur.fetchall()
