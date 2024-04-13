@@ -17,4 +17,4 @@ cur.execute("SELECT * FROM states ORDER BY id")
 if __name__ == '__main__':
     rows = cur.fetchall()
     for row in rows:
-        print(f"({row[0]}, {row[1]})")
+        print(f"({row[0]}, '{row[1]}')")
