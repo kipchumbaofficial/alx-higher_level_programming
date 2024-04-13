@@ -24,8 +24,10 @@ def main():
     cur.execute(query)
     rows = cur.fetchall()
 
-    for row in rows:
-        print(row[2], end=", ")
+    for i, row in enumerate(rows):
+        print(row[2], end="")
+        if i < len(row) - 1:
+            print(', ', end="")
     print()
 
 
