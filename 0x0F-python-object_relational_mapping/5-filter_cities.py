@@ -18,9 +18,9 @@ def main():
     cur = db.cursor()
     state = state.replace("'", "''")
     query = "SELECT cities.* FROM cities "
-    query += "JOIN states ON cities.state_id=states.id "
+    query += "LEFT JOIN states ON cities.state_id=states.id "
     query += "WHERE states.name LIKE BINARY '%{}%'".format(state)
-
+    query += "ORDER BY cities.id"
     cur.execute(query)
     rows = cur.fetchall()
 
