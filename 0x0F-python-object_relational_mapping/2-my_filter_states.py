@@ -17,7 +17,7 @@ def main():
                          passwd=password, db=database)
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name\
-                 LIKE {} ORDER BY id".format("'" + searched + "'"))
+                 LIKE BINARY {} ORDER BY id".format("'" + searched + "'"))
     rows = cur.fetchall()
     for row in rows:
         print(f"({row[0]}, '{row[1]}')")
