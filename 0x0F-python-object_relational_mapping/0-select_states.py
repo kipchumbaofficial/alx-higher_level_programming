@@ -5,6 +5,8 @@ and print out the values
 '''
 import sys
 import MySQLdb
+
+
 def main():
     '''Function to execute the procces'''
     user = sys.argv[1]
@@ -17,5 +19,7 @@ def main():
     rows = cur.fetchall()
     for row in rows:
         print(f"({row[0]}, '{row[1]}')")
+
+
 if __name__ == '__main__':
     main()
