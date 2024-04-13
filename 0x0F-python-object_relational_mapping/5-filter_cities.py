@@ -12,22 +12,24 @@ def main():
     password = argv[2]
     database = argv[3]
     state = argv[4]
+    count = 0
 
     db = MySQLdb.connect(host='localhost', port=3306, user=user,
                          passwd=password, db=database)
     cur = db.cursor()
     state = state.replace("'", "''")
-    query = "SELECT cities.* FROM cities "
+    query = "SELECT cities.id, cities.name, states.name  FROM cities "
     query += "LEFT JOIN states ON cities.state_id=states.id "
-    query += "WHERE states.name LIKE BINARY '%{}%'".format(state)
     query += "ORDER BY cities.id"
     cur.execute(query)
     rows = cur.fetchall()
 
     for i, row in enumerate(rows):
-        print(row[2], end="")
-        if i < len(row) - 1:
-            print(', ', end="")
+        if row[2] == state:
+            if count > 0:
+                print(', ', end="")
+            print(row[1], end="")
+            count = count + 1
     print()
 
 
