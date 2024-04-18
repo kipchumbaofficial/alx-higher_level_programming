@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+'''Selects the first state based on id
+'''
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
