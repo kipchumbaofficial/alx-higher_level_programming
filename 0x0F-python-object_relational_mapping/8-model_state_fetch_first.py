@@ -21,7 +21,8 @@ def main():
     session = Session()
 
     first = session.query(State).first()
-    print(f"{first.id}: {first.name}")
+    if first:
+        print(f"{first.id}: {first.name}")
 
 
 if __name__ == '__main__':
