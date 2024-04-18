@@ -19,7 +19,7 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
     letter = 'a'
-    states = session.query(State).filter(State.id.like("%{}%".format(letter)))\
+    states = session.query(State).filter(State.name.like(f"%{letter}%"))\
         .all()
     if states:
         for state in states:

@@ -11,11 +11,13 @@ import sys
 
 def main():
     user = sys.argv[1]
-    password = urllib.parse.quote_plus(sys.argv[2])
-    database = sys.argv[3]
+    pwd = urllib.parse.quote_plus(sys.argv[2])
+    db = sys.argv[3]
+    host = 'localhost'
+    port = 3306
 
-    engine = create_engine(f"mysql+mysqldb://{user}:\
-                            {password}@localhost/{database}",
+    engine = create_engine("mysql+mysqldb://{}:{}@{}:{}/{}"
+                           .format(user, pwd, host, port, db),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
