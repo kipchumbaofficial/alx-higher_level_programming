@@ -23,6 +23,8 @@ def main():
     first = session.query(State).first()
     if first:
         print(f"{first.id}: {first.name}")
+    else:
+        print()
 
 
 if __name__ == '__main__':
