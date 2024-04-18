@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+'''Selecting by name
+'''
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
