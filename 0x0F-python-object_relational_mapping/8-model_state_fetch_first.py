@@ -24,7 +24,7 @@ def main():
     if first:
         print(f"{first.id}: {first.name}")
     else:
-        print()
+        print("Nothing")
 
 
 if __name__ == '__main__':
