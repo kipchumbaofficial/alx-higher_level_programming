@@ -3,10 +3,10 @@
     Sends a request and displays values of X-Request-Id
 """
 if __name__ == "__main__":
-    from sys import argv
+    import sys
     import requests
 
-    url = argv[1]
+    url = sys.argv[1]
 
     response = requests.get(url)
     print(response.headers['X-Request-Id'])
