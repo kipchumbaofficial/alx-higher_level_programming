@@ -10,15 +10,14 @@ if __name__ == "__main__":
 
     repo = argv[1]
     owner = argv[2]
-    repo_parts = repo.split('/')
-    rep, dire = repo_parts
-    url = f'https://api.github.com/repos/{owner}/{rep}/commits?path={dire}'
+    url = f'https://api.github.com/repos/{owner}/{repo}/commits'
     response = requests.get(url)
 
     json_response = response.json()
-    for commits in json_response:
-        sha = commits.get('sha')
-        commit = commits.get('commit')
+
+    for i in range(10):
+        sha = json_response[i].get('sha')
+        commit = json_response[i].get('commit')
         author = commit.get('author')
         name = author.get('name')
         print(f"{sha} {name}")
