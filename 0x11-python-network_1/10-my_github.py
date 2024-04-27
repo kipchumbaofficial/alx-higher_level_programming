@@ -15,8 +15,11 @@ if __name__ == "__main__":
     auth = HTTPBasicAuth(username, token)
 
     response = requests.post(url, auth=auth)
-    json_response = response.json()
+    if response.status_code == 200:
+        json_response = response.json()
 
-    if json_response:
-        identity = json_response.get('id')
-        print(identity)
+        if json_response:
+            identity = json_response.get('id')
+            print(identity)
+    else:
+        print("None")
