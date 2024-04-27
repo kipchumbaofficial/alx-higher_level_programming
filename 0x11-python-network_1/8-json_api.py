@@ -22,6 +22,6 @@ if __name__ == "__main__":
         else:
             identity = json_response.get('id')
             name = json_response.get('name')
-            print(f"{[id]} {name}")
+            print(f"{[identity]} {name}")
     else:
         print("Not a valid JSON")
