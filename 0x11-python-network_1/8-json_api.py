@@ -8,7 +8,6 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-
     payload = {'q': ""}
     if len(argv) > 1:
         payload['q'] = argv[1]
