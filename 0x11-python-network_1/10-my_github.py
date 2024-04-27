@@ -11,8 +11,8 @@ if __name__ == "__main__":
     username = argv[1]
     token = argv[2]
     url = 'https://api.github.com/user'
-
-    response = requests.post(url, auth=(username, token))
+    headers = {'Authorization': f'Bearer {token}'}
+    response = requests.post(url, headers=headers, auth=(username, token))
     json_response = response.json()
 
     if json_response:
