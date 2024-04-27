@@ -9,17 +9,13 @@ if __name__ == "__main__":
     import requests
     from requests.auth import HTTPBasicAuth
 
-    username = argv[1]
-    token = argv[2]
-    url = 'https://api.github.com/user'
-    auth = HTTPBasicAuth(username, token)
+    auth = HTTPBasicAuth(argv[1], argv[2])
 
-    response = requests.post(url, auth=auth)
+    response = requests.post('https://api.github.com/user', auth=auth)
     if response.status_code == 200:
         json_response = response.json()
 
         if json_response:
-            identity = json_response.get('id')
-            print(identity)
+             print(json_response.get('id'))
     else:
         print("None")
