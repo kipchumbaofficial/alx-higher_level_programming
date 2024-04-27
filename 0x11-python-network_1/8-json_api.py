@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
 
     payload = {'q': ""}
-    if argv:
+    if len(argv) > 1:
         payload[q] = argv[1]
     url = 'http://0.0.0.0:5000/search_user'
     response = requests.post(url, data=payload)
