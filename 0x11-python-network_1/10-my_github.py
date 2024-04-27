@@ -9,10 +9,10 @@ if __name__ == "__main__":
     import requests
 
     username = argv[1]
-    password = argv[2]
+    token = argv[2]
     url = 'https://api.github.com/user'
 
-    response = requests.post(url, auth=(username, password))
+    response = requests.post(url, auth=(username, token))
     json_response = response.json()
 
     if json_response:
