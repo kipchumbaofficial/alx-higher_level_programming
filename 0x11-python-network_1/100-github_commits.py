@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     json_response = response.json()
 
-    for i in range(10):
+    for i in range(10, 0, -1):
         sha = json_response[i].get('sha')
         commit = json_response[i].get('commit')
         author = commit.get('author')
