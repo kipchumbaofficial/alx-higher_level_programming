@@ -10,6 +10,6 @@ if __name__ == "__main__":
     response = requests.get(url)
 
     info = response.json()[:10]
-    for commit in reversed(info):
-        name = commit.get('commit').get('author').get('name')
-        print(f"{commit.get('sha')}: {name}")
+    for commit in info:
+        print(commit.get('sha'), end=": ")
+        print(commit.get('commit').get('author').get('name'))
