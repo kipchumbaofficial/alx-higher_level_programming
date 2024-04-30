@@ -2,14 +2,19 @@
 """Takes in a repo and owner
 prints out sha and author of commit
 """
+import requests
+import sys
+
 
 if __name__ == "__main__":
-    from sys import argv
-    import requests
-    url = f'https://api.github.com/repos/{argv[1]}/{argv[2]}/commits'
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1])
     response = requests.get(url)
-
-    info = response.json()[:10]
-    for commit in info:
-        print(commit.get('sha'), end=": ")
-        print(commit.get('commit').get('author').get('name'))
+    info = response.json()
+    try:
+        for i in range(10):
+            print("{}: {}".format(
+                info[i].get("sha"),
+                info[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
