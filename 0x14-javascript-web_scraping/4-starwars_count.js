@@ -3,23 +3,21 @@
 
 const request = require('request');
 const url = process.argv[2];
+let count = 0;
+const id = '18';
 
 request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    let jsonResponse = JSON.parse(body);
-    let results = jsonResponse['results'];
-    let count = 0;
-    for (let i = 0; i < results.length; i++) {
-      let character = (results[i]['characters']);
-      for (let j = 0; j < character.length; j++) {
-        let wedge = chars[j].endsWith('18/');
-        if (wedge) {
-          count++;
+    const data = JSON.parse(body);
+    data.results.forEach((film) => {
+      film.characters.forEach((character) => {
+        if (character.includes(id)) {
+          count += 1;
         }
-      }
-    }
+      });
+    });
     console.log(count);
   }
 });
