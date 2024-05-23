@@ -3,23 +3,23 @@
 
 const request = require('request');
 const url = process.argv[2];
-let count = 0;
-const wedge = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
-    try {
-      const jsonResponse = JSON.parse(body);
-      jsonResponse.results.forEach(movie => {
-        if (movie.characters.includes(wedge)) {
-          count += 1;
+    let jsonResponse = JSON.parse(body);
+    let results = jsonResponse['results'];
+    let count = 0;
+    for (let i = 0; i < results.length; i++) {
+      let character = (results[i]['characters']);
+      for (let j = 0; j < character.length; j++) {
+        let wedge = chars[j].endsWith('18/');
+        if (wedge) {
+          count++;
         }
-      });
-      console.log(count);
-    } catch (e) {
-      console.log(e);
+      }
     }
+    console.log(count);
   }
 });
